@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  belongs_to :user
+
   validate  :validate_title_presence
   validates :title, length: { minimum: 8 } if :title_is_present?
 
